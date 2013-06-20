@@ -10,9 +10,9 @@ permissions:
     children:
       displaynames.edit.own: true
       displaynames.edit.others: true
-  displayname.edit.own:
+  displaynames.edit.own:
     description: Allows editing of the user's display name.
     default: op
-  displayname.edit.own:
+  displaynames.edit.own:
     description: Allows editing of other users' display names.
     default: op
