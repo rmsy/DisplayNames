@@ -48,6 +48,7 @@ public class DisplayNamesPlugin extends JavaPlugin {
                 Player target = Bukkit.getPlayer(targetName);
                 if (target != null) {
                     target.setDisplayName(ChatColor.translateAlternateColorCodes('&', arguments.getString(0)));
+                    target.setOverheadName(ChatColor.translateAlternateColorCodes('&', arguments.getString(0)));
                     sender.sendMessage(ChatColor.YELLOW + "Display name of " + target.getName() + " set to " + ChatColor.RESET + target.getDisplayName());
                 } else {
                     throw new CommandException("Player " + targetName + " not found.");
@@ -58,6 +59,7 @@ public class DisplayNamesPlugin extends JavaPlugin {
         } else {
             if (Preconditions.checkNotNull(sender, "sender").hasPermission("displaynames.edit.own")) {
                 if (sender instanceof Player) {
+                    ((Player) sender).setOverheadName(ChatColor.translateAlternateColorCodes('&', arguments.getString(0)));
                     ((Player) sender).setDisplayName(ChatColor.translateAlternateColorCodes('&', arguments.getString(0)));
                     sender.sendMessage(ChatColor.YELLOW + "Display name set to " + ChatColor.RESET + ((Player) sender).getDisplayName());
                 } else {
